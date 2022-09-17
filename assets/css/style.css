@@ -4,6 +4,8 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+
 .clear {
   clear: both;
 }
@@ -18,6 +20,7 @@
 .row {
   margin-left: -8px;
   margin-right: -8px;
+
 }
 .row::after {
   content: "";
@@ -65,6 +68,7 @@ html {
   position: fixed;
   top: 0;
   z-index: 1;
+  overflow: hidden;
 }
 #main {
   display: inline-block;
@@ -122,15 +126,28 @@ html {
   font-size: 12px;
 }
 
+#header .mobile-menu-btn,
 #header .search-btn {
   float: right;
   padding: 0 21px;
 }
+
+#header .mobile-menu-btn:hover{
+  background-color: #ccc;
+  
+}
+
+#header .mobile-menu-btn:hover .menu-icon{
+  color: #000;
+}
+
 #header .search-btn:hover {
   background-color: #f44336;
   cursor: pointer;
 }
 
+
+#header .mobile-menu-btn .menu-icon ,
 #header .search-icon {
   font-size: 20px;
   color: #fff;
@@ -162,10 +179,14 @@ html {
 
 #content .content-section {
   width: 800px;
+  max-width: 100%;
   padding: 64px 0;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }
+
 
 #content .section-heading {
   font-size: 30px;
@@ -429,7 +450,7 @@ html {
 .contact-form .form-control {
   padding: 10px;
   border: 1px solid #ccc;
-  width: 97%;
+  width: 100%;
 }
 
 .contact-form .form-submit-btn {
@@ -438,7 +459,7 @@ html {
   padding: 8px 16px;
   border: 1px solid #000;
   font-size: 15px;
-  margin-left: 305px;
+  float: right;
 }
 
 .map-section {

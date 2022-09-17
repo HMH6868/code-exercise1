@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
     <link
       rel="icon"
-      href="https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-1/299920041_3560730027487437_3873221492549253312_n.jpg?stp=dst-jpg_p240x240&_nc_cat=100&ccb=1-7&_nc_sid=7206a8&_nc_ohc=Ie-XGW3TuEMAX9-lI6C&_nc_ht=scontent.fsgn5-5.fna&oh=00_AT9gu-f9ogh0H1uVoumikoPQOT5VbhXZQzmdSRRT9vbGow&oe=63295C3F"
+      href="https://imgur.com/CdkVouM"
       type="image/x-icon"
     />
     <link
       rel="stylesheet"
       href="./assets/font/themify-icons-font/themify-icons/themify-icons.css"
     />
-    <title>do exercise</title>
+    <title>do exercise</title>    
   </head>
   <body>
     <div id="header">
@@ -26,7 +27,7 @@
           <li><a href="#tour">Tour</a></li>
           <li><a href="#contact">Contact</a></li>
           <li>
-            <a href="">
+            <a href="#">
               more
               <i class="nav-down ti-angle-down"></i>
             </a>
@@ -42,6 +43,10 @@
       <!-- begin search botton-->
       <div class="search-btn">
         <i class="search-icon ti-search"></i>
+      </div>
+
+      <div id="mobile-menu-js" class="mobile-menu-btn">
+        <i class="menu-icon ti-menu"></i>
       </div>
       <!-- end search botton-->
     </div>
@@ -317,5 +322,34 @@
         event.stopPropagation();
       });
     </script>
+
+    <script>
+       var header = document.getElementById('header')
+       var mobileMenu = document.getElementById('mobile-menu-js')
+       var headerHeight = header.clientHeight ;
+
+       // đóng mở mobile menu
+
+       mobileMenu.onclick = function () {
+         var isClosed = header.clientHeight === headerHeight ;
+         if (isClosed) {
+          header.style.height = 'auto';
+         } else{
+          header.style.height = null ;
+         }
+       }
+
+       //tự đóng sau khi bấm vào menu 
+
+       var menuItems = document.querySelectorAll('#nav li a[href*="#"]')
+       for (var i = 0 ; i < menuItems.length; i++) {
+        var menuItem = menuItems[i];
+
+        menuItem.onclick = function () {
+          header.style.height = null ;
+        }
+       }
+       
+    </script>
   </body>
-</html>
+</html> 
