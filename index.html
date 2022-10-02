@@ -78,7 +78,7 @@
           consequat.
         </p>
         <div class="row member-list">
-          <div class="col col-third text-center">
+          <div class="member-items col col-third text-center">
             <p class="member-name">Name</p>
             <img
               src="./assets/img/member/member1.jpg"
@@ -87,7 +87,7 @@
             />
           </div>
 
-          <div class="col col-third text-center">
+          <div class="member-items col col-third text-center">
             <p class="member-name">Name</p>
             <img
               src="./assets/img/member/member1.jpg"
@@ -96,7 +96,7 @@
             />
           </div>
 
-          <div class="col col-third text-center">
+          <div class="member-items col col-third text-center">
             <p class="member-name">Name</p>
             <img
               src="./assets/img/member/member1.jpg"
@@ -122,8 +122,8 @@
           </ul>
           <!-- place  -->
 
-          <div class="row place-list">
-            <div class="col col-third">
+          <div class="row place-list ">
+            <div class="col col-third mt-16 s-col-full ">
               <img
                 src="./assets/img/place/place1.jpg"
                 alt="New York"
@@ -139,7 +139,7 @@
               </div>
             </div>
 
-            <div class="col col-third">
+            <div class="col col-third mt-16 s-col-full">
               <img
                 src="./assets/img/place/place2.jpg"
                 alt="New York"
@@ -155,7 +155,7 @@
               </div>
             </div>
 
-            <div class="col col-third">
+            <div class="col col-third mt-16 s-col-full">
               <img
                 src="./assets/img/place/place3.jpg"
                 alt="New York"
@@ -180,15 +180,15 @@
         <p class="section-suv-heading">Fan? Drop a note!</p>
 
         <div class="row contact-content">
-          <div class="col col-half contact-info">
+          <div class="col col-half s-col-full contact-info">
             <p><i class="ti-location-pin"></i>Chicago, US</p>
             <p><i class="ti-mobile"></i>Phone: +00 151515</p>
             <p><i class="ti-email"></i>Email: mail@mail.com</p>
           </div>
-          <div class="col col-half contact-form">
+          <div class="col col-half s-col-full contact-form">
             <form action="">
               <div class="row">
-                <div class="col col-hafl">
+                <div class="col col-hafl s-col-full  ">
                   <input
                     type="text"
                     name=""
@@ -198,7 +198,7 @@
                     class="form-control"
                   />
                 </div>
-                <div class="col col-hafl">
+                <div class="col col-hafl s-col-full ">
                   <input
                     type="email"
                     name=""
@@ -341,14 +341,19 @@
 
        //tự đóng sau khi bấm vào menu 
 
-       var menuItems = document.querySelectorAll('#nav li a[href*="#"]')
-       for (var i = 0 ; i < menuItems.length; i++) {
-        var menuItem = menuItems[i];
-
-        menuItem.onclick = function () {
-          header.style.height = null ;
+       var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+    for (var i = 0; i < menuItems.length; i++) {
+        var menuItem = menuItems [i];
+        
+        menuItem.onclick = function(event) {
+            var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+            if (isParentMenu) {
+                event.preventDefault();
+            } else {
+                header.style.height = null;
+            }
         }
-       }
+    }
       
     </script>
   </body>
