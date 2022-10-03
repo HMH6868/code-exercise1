@@ -198,7 +198,7 @@
                     class="form-control"
                   />
                 </div>
-                <div class="col col-hafl s-col-full ">
+                <div class="col col-hafl  s-col-full ">
                   <input
                     type="email"
                     name=""
@@ -324,24 +324,24 @@
     </script>
 
     <script>
-       var header = document.getElementById('header')
-       var mobileMenu = document.getElementById('mobile-menu-js')
-       var headerHeight = header.clientHeight ;
+      var header = document.getElementById('header')
+      var mobileMenu = document.getElementById('mobile-menu-js')
+      var headerHeight = header.clientHeight ;
 
        // đóng mở mobile menu
 
-       mobileMenu.onclick = function () {
-         var isClosed = header.clientHeight === headerHeight ;
-         if (isClosed) {
+        mobileMenu.onclick = function () {
+        var isClosed = header.clientHeight === headerHeight ;
+        if (isClosed) {
           header.style.height = 'auto';
-         } else{
+        } else{
           header.style.height = null ;
-         }
-       }
+        }
+      }
 
        //tự đóng sau khi bấm vào menu 
 
-       var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+      var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
     for (var i = 0; i < menuItems.length; i++) {
         var menuItem = menuItems [i];
         
